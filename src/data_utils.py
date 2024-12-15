@@ -8,7 +8,7 @@ import pandas as pd
 # path constants
 from src.dataset import Dataset
 
-HOME = os.path.join(expanduser("~"), "sac2019")
+HOME = "/workspace"
 DEFAULT_DATA_FOLDER = os.path.join(HOME, "data")
 DEFAULT_OUTPUT_FOLDER = os.path.join(HOME, "output")
 
