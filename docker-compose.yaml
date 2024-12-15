@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  explain-recommendations:
+    image: continuumio/anaconda3
+    container_name: explain-recommendations-container
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: >
+      /bin/bash -c "
+      conda install jupyter -y --quiet &&
+      conda env create -f env.yml &&
+      source activate sac2019_env &&
+      jupyter notebook --notebook-dir=/workspace --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
