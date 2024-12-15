@@ -34,8 +34,8 @@ The dataset folder path should be set in `experiment/utils.py`
 ```
 conda activate sac2019_env
 export PYTHONPATH="/workspace:$PYTHONPATH"
-conda remove numpy pandas
-conda install numpy=1.21 pandas=1.3
-conda install scikit-learn
+RUN conda remove numpy pandas
+RUN conda install numpy=1.21 pandas=1.3
+RUN conda install scikit-learn
 python experiment/evaluate_model.py
 ``
