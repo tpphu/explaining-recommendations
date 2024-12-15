@@ -1,4 +1,14 @@
-FROM continuumio/anaconda3
+FROM continuumio/anaconda3:2019.10
+
+# Cập nhật danh sách repository cho Debian Buster và bỏ debian-security
+RUN sed -i 's|http://deb.debian.org/debian|http://archive.debian.org/debian|g' /etc/apt/sources.list && \
+    sed -i '/security/d' /etc/apt/sources.list && \
+    apt-get update --allow-releaseinfo-change && \
+    apt-get install -y \
+    gcc \
+    g++ \
+    make \
+    && rm -rf /var/lib/apt/lists/*
 
 # Cài đặt Jupyter Notebook
 RUN conda install jupyter -y --quiet

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   explain-recommendations:
-    image: continuumio/anaconda3
+    image: tpphu/explain-recommendations:latest
     container_name: explain-recommendations-container
     ports:
       - "8888:8888"
